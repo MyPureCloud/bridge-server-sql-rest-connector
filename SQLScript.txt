@@ -1,0 +1,39 @@
+CREATE TABLE CRM_Contacts
+(
+	ID int,
+	FirstName varchar(255),
+	LastName varchar(255),
+	WorkPhone varchar(15),
+	CellPhone varchar(15),
+	WorkEmail varchar(50),
+	Address varchar(255),
+	City varchar(255),
+	State varchar(2),
+	PostalCode varchar(6),
+	IVRPin varchar(9)
+);
+
+CREATE TABLE CRM_Accounts
+(
+	ID int,
+	ContactID int,
+	Name varchar(255),
+	Number varchar(255),
+	PrimaryContact varchar(255),
+	Address varchar(255),
+	City varchar(255),
+	State varchar(2),
+	PostalCode varchar(6),
+	WorkPhone varchar(15),
+	WorkEmail varchar(50)
+);
+
+INSERT INTO CRM_Contacts
+VALUES (1000, 'Bob', 'Smith', '3178723000', '3174134276', 'bob@ac.com', '1234 main street', 'Indianaplis', 'IN', '46062', '123456789'),
+(1001, 'Greg', 'Johnson', '3178723001', '3175555555', 'greg@bigco.com', '1234 main street', 'Indianaplis', 'IN', '46062', ''),
+(1002, 'Kelly', 'Shark', '3178723002', '3176061234', 'kelly@inin.com', '1234 main street', 'Indianaplis', 'IN', '46278', '');
+
+INSERT INTO CRM_Accounts
+VALUES (2000, 1000, 'Interactice Intelligence', '20', 'Bob Smith', '7601 Interactive Way', 'Indianapolis', 'IN', '46278', '3178723000', 'bob@ac.com'),
+(2001, 1001, 'The Big Company', '21', 'Greg Johnson', '100 elm street', 'Indianapolis', 'IN', '46200', '3178723000', 'greg@bigco.com'),
+(2002, 1002, 'America Corporation', '22', 'Kelly Shark', '1234 main street', 'Indianapolis', 'IN', '46278', '3178723000', 'kelly@inin.com');

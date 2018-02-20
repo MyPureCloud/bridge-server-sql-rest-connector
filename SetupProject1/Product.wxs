@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="PureCloudRESTService" Language="1033" Version="1.0.0.0" Manufacturer="Interactive Intelligence" UpgradeCode="1E94BA1F-A311-43D2-8385-BDAC45DC9BCB">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="PureCloudRESTService" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="PureCloudRESTService">
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment> 
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="37AC823C-F8E3-4BC8-A9A1-1CD4E62A9185">
+        <File Id="inin.Bridge.WebServices.Datadip.Sample.Lib_wd_15_2.dll" Name="inin.Bridge.WebServices.Datadip.Sample.Lib-wd-15-2.dll" Source="..\PureCloudRESTService\bin\Debug\inin.Bridge.WebServices.Datadip.Sample.Lib-wd-15-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="inin.Bridge.WebServices.Datadip.Sample.Lib_wd_15_2.pdb" Name="inin.Bridge.WebServices.Datadip.Sample.Lib-wd-15-2.pdb" Source="..\PureCloudRESTService\bin\Debug\inin.Bridge.WebServices.Datadip.Sample.Lib-wd-15-2.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PureCloudRESTService.exe" Name="PureCloudRESTService.exe" Source="..\PureCloudRESTService\bin\Debug\PureCloudRESTService.exe" Vital="yes" KeyPath="yes" DiskId="1"/>
+        <File Id="PureCloudRESTService.exe.config" Name="PureCloudRESTService.exe.config" Source="..\PureCloudRESTService\bin\Debug\PureCloudRESTService.exe.config" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PureCloudRESTService.InstallLog" Name="PureCloudRESTService.InstallLog" Source="..\PureCloudRESTService\bin\Debug\PureCloudRESTService.InstallLog" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PureCloudRESTService.pdb" Name="PureCloudRESTService.pdb" Source="..\PureCloudRESTService\bin\Debug\PureCloudRESTService.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ServiceConfig.json" Name="ServiceConfig.json" Source="..\PureCloudRESTService\bin\Debug\ServiceConfig.json" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="Newtonsoft.json.dll" Name="Newtonsoft.json.dll" Source="..\PureCloudRESTService\bin\Debug\Newtonsoft.json.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        
+        <ServiceInstall
+                    Id="ServiceInstaller"
+                    Type="ownProcess"
+                    Vital="yes"
+                    Name="PureCloudRESTService"
+                    DisplayName="PureCloud REST Service"
+                    Description="REST API Service for use with ININ Bridge Connector"
+                    Start="auto"
+                    Account="LocalSystem"
+                    ErrorControl="ignore"
+                    Interactive="no"
+                        />
+        <ServiceControl Id="StartService" Stop="both" Remove="uninstall" Name="PureCloudRESTService" Wait="yes" />
+      </Component>
+    </ComponentGroup> 
+  </Fragment>
+</Wix>

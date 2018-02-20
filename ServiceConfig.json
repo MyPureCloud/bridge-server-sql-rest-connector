@@ -1,0 +1,27 @@
+{
+	"URL": "http://127.0.0.1:8088",
+  "connectionString": "Server=;Database=;Trusted_Connection=;",
+  "getContactByPhoneNumber": "select Id, FirstName, LastName, WorkPhone, CellPhone, WorkEmail, Address as Line1, City, PostalCode, WorkEmail as CustomAttribute FROM CRM_Contacts where CellPhone = '%1' or WorkPhone = '%1'",
+  "getAccountByPhoneNumber": "",
+  "getAccountByAccountNumber": "",
+  "getAccountByContactId": "",
+  "getMostRecentOpenCaseByContactId": "",
+  "contactConfig": {
+	  "fields": ["FirstName", "LastName", "Id", "CustomAttribute"],
+	  "addressFields": [],
+	  "phoneCount": 2,
+	  "phoneMappings": ["WorkPhone", "CellPhone"],
+	  "emailCount": 1,
+	  "emailMappings": ["WorkEmail"],
+	  "getAddress": false
+  },
+  "accountConfig": {
+	  "fields": ["Id", "Name", "Number", "CustomAttribute"],
+	  "addressFields": ["City", "Country", "Line1", "Line2", "Line3", "PostalCode", "State"],
+	  "phoneCount": 1,
+	  "phoneMappings": ["WorkPhone"],
+	  "emailCount": 2,
+	  "emailMappings": ["WorkEmail", "PersonalEmail"],
+	  "getAddress": true
+  }
+}

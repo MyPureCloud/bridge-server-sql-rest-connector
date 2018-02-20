@@ -1,0 +1,31 @@
+{
+	"Address":{
+		"City":"Indianapolis",
+		"Country":null,
+		"Line1":null,
+		"Line2":null,
+		"Line3":null,
+		"PostalCode":null,
+		"State":null,
+		"Type":null
+	},
+	"EmailAddresses":{
+		"EmailAddress":[
+			{
+				"EmailAddress":"amy.smith@example.net",
+				"EmailType":0
+			}
+		]
+	},
+	"FirstName":"Amy",
+	"Id":"1796",
+	"LastName":"Smith",
+	"PhoneNumbers":{
+		"PhoneNumber":[
+			{
+				"Number":"1-555-867-5309",
+				"PhoneType":1
+			}
+		]
+	}
+}

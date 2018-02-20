@@ -1,0 +1,31 @@
+{
+	"Address":{
+		"City":"Indianapolis",
+		"Country":null,
+		"Line1":null,
+		"Line2":null,
+		"Line3":null,
+		"PostalCode":null,
+		"State":null,
+		"Type":null
+	},
+	"EmailAddresses":{
+		"EmailAddress":[
+			{
+				"EmailAddress":"jonathan.smith@inin.com",
+				"EmailType":0
+			}
+		]
+	},
+	"FirstName":"Jonathan",
+	"Id":"1830",
+	"LastName":"Smith",
+	"PhoneNumbers":{
+		"PhoneNumber":[
+			{
+				"Number":"tel:+13172222222",
+				"PhoneType":1
+			}
+		]
+	}
+}
